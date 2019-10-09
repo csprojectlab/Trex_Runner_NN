@@ -78,7 +78,10 @@ function draw () {
         ground.animate ();
     
         if (counter % obstacleSpeed == 0) {
-            if (random(1) < 0.3) {
+            let r = floor (random(1, 20));
+            obstacleSpeed = floor(map (r, 1, 20, 60, 100))
+            console.log(obstacleSpeed)
+            if (random(1) < 0.17) {
                 vultures.push(new Vulture(velocity, spriteImagesVulture, width, 240, 60));
             } else {
                 let r = floor(random(1, 4))        
